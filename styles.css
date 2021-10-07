@@ -160,6 +160,7 @@ body {
 .kanban {
     width: 50%;
     height: fit-content;
+    min-height: 50vh;
     display: flex;
     padding: 30px;
     margin: 1rem;
