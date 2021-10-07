@@ -159,6 +159,7 @@ body {
 
 .kanban {
     width: 50%;
+    height: fit-content;
     display: flex;
     padding: 30px;
     margin: 1rem;
@@ -182,6 +183,7 @@ body {
 }
 
 .kanban__item-input {
+    margin-bottom: .5rem;
     padding: 10px 15px;
     box-sizing: border-box;
     background: white;
