@@ -1,4 +1,5 @@
 import App from "./App.js";
+import KanbanAPI from "../kanbanApi/KanbanAPI.js";
 
 const root = document.getElementById("app");
 let app;
@@ -20,3 +21,9 @@ function clock() {
 
 let interval;
 interval = setInterval(clock, 1000);
+
+// KanbanAPI.deleteItem(87654);
+
+// console.log(KanbanAPI.getItems(1));
+// console.log(KanbanAPI.getItems(2));
+// console.log(KanbanAPI.getItems(3));
