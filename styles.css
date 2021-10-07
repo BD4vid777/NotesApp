@@ -4,6 +4,66 @@ body {
     margin: 0;
 }
 
+#clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 10%;
+    margin-bottom: 2rem;
+}
+
+#clock h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .1em;
+}
+
+#time {
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+}
+
+#time div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00af8c;
+    width: 100%;
+    padding-top: .5rem;
+    padding-bottom: 0;
+    color: white;
+    border-radius: 7px;
+}
+
+#time div span:nth-child(1) {
+    font-size: 3rem;
+    padding-bottom: .5rem;
+}
+
+#time div span:nth-child(2) {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    background-color: #009578;
+    width: 100%;
+    text-align: center;
+    padding: .5rem 0;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+
+
+#time div:last-child {
+    background-color: darkgrey;
+}
+
+#time div:last-child span:nth-child(2) {
+    background-color: #737373;
+}
+
 .notes {
     display: flex;
     height: 100%;

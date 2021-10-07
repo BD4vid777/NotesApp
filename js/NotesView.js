@@ -7,6 +7,14 @@ export default class NotesView {
         this.onNoteDelete = onNoteDelete;
         this.root.innerHTML = `
              <div class="notes__sidebar">
+                <div id="clock">
+                    <h2>the time is now</h2>
+                    <div id="time">
+                        <div><span id="hour">00</span><span>Hours</span></div>
+                        <div><span id="minutes">00</span><span>Minutes</span></div>
+                        <div><span id="seconds">00</span><span>Seconds</span></div>
+                    </div>
+                </div>
                 <button class="notes__add" type="button">Add Note</button>
                 <div class="notes__list"></div>
             </div>
