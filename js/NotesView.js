@@ -8,7 +8,12 @@ export default class NotesView {
         this.root.innerHTML = `
              <div class="notes__sidebar">
                 <div id="clock">
-                    <h2>the time is now</h2>
+                    <h3 id="date">      
+                        <span id="dayname">Day</span>,
+                        <span id="daynum">00</span>
+                        <span id="month">Month</span>
+                        <span id="year">Year</span>
+                    </h3>
                     <div id="time">
                         <div><span id="hour">00</span><span>Hours</span></div>
                         <div><span id="minutes">00</span><span>Minutes</span></div>
