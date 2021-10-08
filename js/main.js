@@ -1,9 +1,9 @@
 import App from "./App.js";
-import KanbanAPI from "../kanbanApi/KanbanAPI.js";
+import Kanban from "../kanbanViewJS/Kanban.js";
 
-const root = document.getElementById("app");
-let app;
-app = new App(root);
+
+new App(document.getElementById("app"));
+new Kanban(document.querySelector(".kanban"));
 
 function clock() {
 
@@ -13,8 +13,11 @@ function clock() {
     let year = new Date().getFullYear();
 
     Number.prototype.pad = function(digits) {
-        for(var n = this.toString(); n.length < digits; n = 0 + n);
-        return n;
+
+        let n = this.toString();
+        if (n.length < digits) {
+            return 0 + n;
+        } return n;
     }
 
 
@@ -42,9 +45,3 @@ function clock() {
 
 let interval;
 interval = setInterval(clock, 1000);
-
-// KanbanAPI.deleteItem(87654);
-
-// console.log(KanbanAPI.getItems(1));
-// console.log(KanbanAPI.getItems(2));
-// console.log(KanbanAPI.getItems(3));
