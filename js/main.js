@@ -12,11 +12,16 @@ function clock() {
     let month = new Date().getMonth();
     let year = new Date().getFullYear();
 
+    Number.prototype.pad = function(digits) {
+        for(var n = this.toString(); n.length < digits; n = 0 + n);
+        return n;
+    }
+
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const ids = ["dayname", "daynum", "month", "year"];
-    const values = [week[dname], dayNum, months[month], year];
+    const values = [week[dname], dayNum.pad(2), months[month], year];
 
     for (let i = 0; i < ids.length; i++) {
         document.getElementById(ids[i]).firstChild.nodeValue = values[i];
@@ -30,9 +35,9 @@ function clock() {
     let m = new Date().getMinutes();
     let s = new Date().getSeconds();
 
-    hour.innerHTML = h;
-    minutes.innerHTML = m;
-    seconds.innerHTML = s;
+    hour.innerHTML = h.pad(2);
+    minutes.innerHTML = m.pad(2);
+    seconds.innerHTML = s.pad(2);
 }
 
 let interval;
