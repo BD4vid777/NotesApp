@@ -1,4 +1,4 @@
-# This is Notes APP with pure JS, no frameworks
+# This is Notes APP with Kanban with pure JS, no frameworks
 
 ## Project for learning purposes
 
