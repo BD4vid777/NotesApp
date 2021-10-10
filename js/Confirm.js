@@ -3,8 +3,7 @@ export default class Confirm {
         options = Object.assign({}, {
             title: 'Test Title',
             message: 'Test Body',
-            onOk: function () { console.log('Pressed Ok'); },
-            onCancel: function () { console.log('Pressed Cancel') }
+            onOk: function () { console.log('Pressed Ok'); }
         }, options);
 
         const html = `
@@ -32,7 +31,7 @@ export default class Confirm {
 
         confirmEl.addEventListener('click', e => {
             if (e.target === confirmEl) {
-                options.onCancel();
+                console.log("Clicked outside the confirm window. CANCELED action")
                 this._close(confirmEl);
             }
         });
@@ -43,7 +42,7 @@ export default class Confirm {
         });
 
         confirmCancel.addEventListener('click', () => {
-            options.onCancel();
+            console.log("Clicked cancel");
             this._close(confirmEl);
         });
     }
