@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
@@ -218,7 +222,107 @@ body {
     background: rgba(0,0,0,.15);
 }
 
+/* Confirm custom window */
 
+.confirm__container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0, .6);
+    padding: .625rem;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: confirm__open .5s forwards;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm__container-close {
+    animation: confirm__close .5s forwards;;
+}
+
+.confirm__window {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 7px;
+
+    font-size: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 .625rem rgba(0,0,0, .3);
+    opacity: 0;
+    animation: zoomIn 200ms forwards;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirm__window-close {
+    animation: zoomOut 200ms backwards;
+}
+
+.confirm__title {
+    width: 100%;
+    text-align: left;
+    padding: .5rem 1rem;
+    margin: 0;
+    background: #00af8c;
+    color: white;
+}
+
+.confirm__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: .5rem;
+    padding: .5rem 1rem;
+}
+
+.confirm__buttons button {
+    font-size: 1rem;
+    border: none;
+    border-radius: 7px;
+    padding: .3rem .6rem;
+    cursor: pointer;
+    opacity: .7;
+    color: white;
+}
+
+.confirm__buttons button:hover {
+    opacity: 1;
+}
+
+.confirm__yes {
+    background: #00af8c;
+}
+
+.confirm__cancel {
+    background: #ff7d7d;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(.5); opacity: 0}
+    to { transform: scale(1); opacity: 1}
+}
+
+@keyframes zoomOut {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes confirm__open {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes confirm__close {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
 
 
 
