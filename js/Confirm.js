@@ -3,6 +3,8 @@ export default class Confirm {
         options = Object.assign({}, {
             title: 'Test Title',
             message: 'Test Body',
+            yes: 'Yes',
+            cancel: 'Cancel',
             onOk: function () { console.log('Pressed Ok'); }
         }, options);
 
@@ -12,8 +14,8 @@ export default class Confirm {
                     <h3 class="confirm__title">${options.title}</h3>
                     <h2 class="confirm__body">${options.message}</h2>
                     <div class="confirm__buttons">
-                        <button class="confirm__yes">Yes</button>
-                        <button class="confirm__cancel">Cancel</button>
+                        <button class="confirm__yes">${options.yes}</button>
+                        <button class="confirm__cancel">${options.cancel}</button>
                     </div>
                 </div>
             </div>

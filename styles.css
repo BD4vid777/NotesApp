@@ -275,6 +275,10 @@ body {
     color: white;
 }
 
+.confirm__body {
+    padding: .1rem 1rem;
+}
+
 .confirm__buttons {
     width: 100%;
     display: flex;
