@@ -255,6 +255,7 @@ body {
     box-shadow: 0 0 .625rem rgba(0,0,0, .3);
     opacity: 0;
     animation: zoomIn 200ms forwards;
+    animation-delay: 200ms;
 
     display: flex;
     flex-direction: column;
@@ -262,7 +263,7 @@ body {
 }
 
 .confirm__window-close {
-    animation: zoomOut 200ms backwards;
+    animation: zoomOut 500ms forwards;
 }
 
 .confirm__title {

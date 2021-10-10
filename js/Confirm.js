@@ -32,6 +32,7 @@ export default class Confirm {
         confirmEl.addEventListener('click', e => {
             if (e.target === confirmEl) {
                 console.log("Clicked outside the confirm window. CANCELED action")
+                confirmEl.classList.add('.confirm__window-close');
                 this._close(confirmEl);
             }
         });
@@ -48,6 +49,10 @@ export default class Confirm {
     }
 
     static  _close(confirmEl) {
-        document.body.removeChild(confirmEl);
+        confirmEl.classList.add('confirm__window-close');
+
+        confirmEl.addEventListener('animationend', () => {
+            document.body.removeChild(confirmEl);
+        });
     }
 }

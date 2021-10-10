@@ -1,3 +1,5 @@
+import Confirm from "./Confirm.js";
+
 export default class NotesView {
     constructor(root, { onNoteSelect, onNoteAdd, onNoteEdit, onNoteDelete } = {}) {
         this.root = root;
@@ -85,11 +87,15 @@ export default class NotesView {
                 this.onNoteSelect(noteListItem.dataset.noteId);
             });
             noteListItem.addEventListener("dblclick", () => {
-                const doDelete = confirm("Are you sure you want to delete this note?");
 
-                if (doDelete) {
-                    this.onNoteDelete(noteListItem.dataset.noteId);
-                }
+                Confirm.open({
+                    title: "Delete Note",
+                    message: "Do you really want to delete this Note?",
+                    onOk: () => {
+                        this.onNoteDelete(noteListItem.dataset.noteId);
+                    }
+                });
+
             });
         })
     }

@@ -1,6 +1,5 @@
 import App from "./App.js";
 import Kanban from "../kanbanViewJS/Kanban.js";
-import Confirm from "./Confirm.js";
 
 
 new App(document.getElementById("app"));
@@ -46,5 +45,3 @@ function clock() {
 
 let interval;
 interval = setInterval(clock, 1000);
-
-Confirm.open();

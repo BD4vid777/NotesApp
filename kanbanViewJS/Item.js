@@ -1,5 +1,6 @@
 import KanbanAPI from "../kanbanApi/KanbanAPI.js";
 import DropZone from "./DropZone.js";
+import Confirm from "../js/Confirm.js";
 
 export default class Item {
     constructor(id, content) {
@@ -29,14 +30,17 @@ export default class Item {
 
         this.elements.input.addEventListener("blur", onBlur);
         this.elements.root.addEventListener("dblclick", () => {
-            const check = confirm("Are You sure You want to delete this item?");
 
-            if (check) {
-                KanbanAPI.deleteItem(id);
+            Confirm.open({
+                title: "Delete Task",
+                message: "Do you really want to delete this Task?",
+                onOk: () => {
+                    KanbanAPI.deleteItem(id);
+                    this.elements.input.removeEventListener("blur", onBlur);
+                    this.elements.root.parentElement.removeChild(this.elements.root);
+                }
+            });
 
-                this.elements.input.removeEventListener("blur", onBlur);
-                this.elements.root.parentElement.removeChild(this.elements.root);
-            }
         });
 
         this.elements.root.addEventListener('dragstart', evt => {
