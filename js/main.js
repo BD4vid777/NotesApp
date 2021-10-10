@@ -47,9 +47,15 @@ function clock() {
 let interval;
 interval = setInterval(clock, 1000);
 
-Confirm.open({
-    title: "Hello Hint",
-    message: "If You want to delete note or task, just click it twice!",
-    yes: "Ok",
-    cancel: "Close Hint"
-});
+const hint = localStorage.getItem("notesapp-note-hint");
+
+if (!hint) {
+
+    Confirm.open({
+        title: "Hello Hint",
+        message: "If You want to delete note or task, just click it twice!",
+        yes: "Ok",
+        cancel: "Close Hint"
+    });
+    localStorage.setItem("notesapp-note-hint", "true");
+}
